@@ -188,8 +188,8 @@ ROOM 8
 17,17,17,17,17,17,0,2a,0,0,17,17,17,17,17,17
 17,17,17,17,17,17,17,2c,2c,17,17,17,17,17,17,17
 NAME HiddenHall
-EXT 7,0 7 7,12
-EXT 8,0 7 7,12
+EXT 7,0 7 7,12 FX fade_b
+EXT 8,0 7 7,12 FX fade_b
 PAL 2
 TUNE 8
 
@@ -3500,7 +3500,7 @@ DLG 4
   - {item "2"} < 1 ?
     {blip "3"} The door is chained up.
   - else ?
-    {blip "8"} You use the bolt cutters on the chains to open the door. {pg}{exit "2" 7 13}
+    {blip "8"} You use the bolt cutters on the chains to open the door. {pg}{exit "2" 7 13 "tunnel"}
 }
 """
 NAME lock dialog
@@ -3514,7 +3514,7 @@ I shouldn't leave yet, there's still things to explore.
 NAME hidden2 dialog
 
 DLG 7
-You open the door and enter the back room.{pg}{exit "3" 4 12}
+You open the door and enter the back room.{pg}{exit "3" 4 12 "tunnel"}
 NAME door dialog
 
 DLG 8
@@ -3583,7 +3583,7 @@ DLG 19
   - hasCignLoop == 1 ?
     You stand at the top of the staircase.{pg}{exit "f" 8 7 "wave"}
   - else ?
-    A trail of an unidentifiable black substance leads down the stairs. It smells faintly of kerosene. {pg}{exit "HiddenHall" 7 13}
+    A trail of an unidentifiable black substance leads down the stairs. It smells faintly of kerosene. {pg}{exit "HiddenHall" 7 13 "tunnel"}
 }
 """
 NAME stairs_nobob dialog
@@ -3597,7 +3597,7 @@ DLG b
 NAME bobb dialog
 
 DLG c
-You leave the room.{pg}{exit "9" 3 1}
+You leave the room.{pg}{exit "9" 3 1 "tunnel"}
 NAME door dialog 1
 
 DLG d
@@ -3620,7 +3620,7 @@ DLG f
 NAME skulldialog
 
 DLG g
-A trail of an unidentifiable black substance leads down the stairs. It smells faintly of kerosene. {pg}{exit "HiddenHall" 7 13}
+A trail of an unidentifiable black substance leads down the stairs. It smells faintly of kerosene. {pg}{exit "HiddenHall" 7 13 "tunnel"}
 NAME stairs dialog
 
 DLG j
@@ -3655,11 +3655,11 @@ Bob looks panicked. "We tried to open the door but it's jammed shut!" {pg}{exit 
 NAME bobwait dialog
 
 DLG p
-Bob stands and stares at you silently.{pg}I can't help you now. {wvy}"It has to be this way."{/wvy}
+Bob stands and stares at you silently.{pg}"I can't help you now."{pg}{wvy}It has to be this way."{/wvy}
 NAME bobevil dialog
 
 DLG q
-John stares at you silently and takes another puff from his cigarette.{pg}"Don't keep them waiting.{wvy}We drove you a long way to do this."{/wvy}
+John stares at you silently and takes another puff from his cigarette.{pg}"Don't keep them waiting."{pg}{wvy}"We drove you a long way to do this."{/wvy}
 NAME johnevil dialog
 
 DLG r
@@ -3709,7 +3709,7 @@ DLG y
 """
 You find a revolver on the floor. It's covered in a thin film of blood.{pg}{
   - hasLooped == 1 ?
-    You pick up the revolver. Upon inspecting it you realize it only has one bullet left.{pg}If you're going to take someone out, they need to be {clr 0}alone.{/clr}{pg}{hasRevolver = 1}{exit "9" 3 1}
+    You pick up the revolver. Upon inspecting it you realize it only has one bullet left.{pg}If you're going to take someone out, they need to be {clr 0}alone.{/clr}{pg}{hasRevolver = 1}{exit "9" 3 1 "tunnel"}
   - else ?
     You decide against touching the revolver, you wouldn't want your fingerprints getting on a possible murder weapon now would you?
 }
