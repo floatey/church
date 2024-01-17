@@ -3640,7 +3640,14 @@ John looks nauseous. "The door is all chained up, maybe we should just go home?"
 NAME exit narration 2
 
 DLG n
-John lights a cigarette and brings it to his mouth for a puff. "I'm not going down there." {pg}{exit "c" 8 7 "wave"}
+"""
+{
+  - hasCig == 1 ?
+    John is too engrossed in his cigarette to acknowledge you.
+  - else ?
+    John lights a cigarette and brings it to his mouth for a puff. "I'm not going down there." {pg}{exit "c" 8 7 "wave"}
+}
+"""
 NAME johnwait dialog
 
 DLG o
